@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="newsmanagersystem@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="newsmanagersystem">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="111"/>
+    <schema id="4" parent="1" name="bank"/>
+    <schema id="5" parent="1" name="bankdb"/>
+    <schema id="6" parent="1" name="day003"/>
+    <schema id="7" parent="1" name="demo1"/>
+    <schema id="8" parent="1" name="house"/>
+    <schema id="9" parent="1" name="information_schema"/>
+    <schema id="10" parent="1" name="kgcnews"/>
+    <schema id="11" parent="1" name="library"/>
+    <schema id="12" parent="1" name="myschool"/>
+    <schema id="13" parent="1" name="mysql"/>
+    <schema id="14" parent="1" name="news"/>
+    <schema id="15" parent="1" name="performance_schema"/>
+    <schema id="16" parent="1" name="school"/>
+    <schema id="17" parent="1" name="school01"/>
+    <schema id="18" parent="1" name="sys"/>
+    <schema id="19" parent="1" name="t24_test"/>
+    <schema id="20" parent="1" name="test"/>
+    <schema id="21" parent="1" name="test1"/>
+    <table id="22" parent="2" name="comments"/>
+    <table id="23" parent="2" name="news"/>
+    <table id="24" parent="2" name="news_users"/>
+    <table id="25" parent="2" name="topic"/>
+    <column id="26" parent="22" name="cid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="22" name="cnid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="22" name="ccontent">
+      <Position>3</Position>
+      <DataType>varchar(3000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="22" name="cdate">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="22" name="cip">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="22" name="cauthor">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="22" name="CIN_NID">
+      <ColNames>cnid</ColNames>
+    </index>
+    <key id="33" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="22" name="CIN_NID">
+      <ColNames>cnid</ColNames>
+      <RefSchemaName>newsmanagersystem</RefSchemaName>
+      <RefTableName>news</RefTableName>
+      <RefColNames>NID</RefColNames>
+    </foreign-key>
+    <column id="35" parent="23" name="nid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="23" name="ntid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="23" name="ntitle">
+      <Position>3</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="23" name="nauthor">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="23" name="ncreateDate">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="40" parent="23" name="npicPath">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="41" parent="23" name="ncontent">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="23" name="nmodifyDate">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="43" parent="23" name="nsummary">
+      <Position>9</Position>
+      <DataType>varchar(4000)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="44" parent="23" name="NEWS_TOPIC">
+      <ColNames>ntid</ColNames>
+    </index>
+    <key id="45" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>nid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="23" name="NEWS_TOPIC">
+      <ColNames>ntid</ColNames>
+      <RefSchemaName>newsmanagersystem</RefSchemaName>
+      <RefTableName>topic</RefTableName>
+      <RefColNames>TID</RefColNames>
+    </foreign-key>
+    <column id="47" parent="24" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="24" name="uname">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="24" name="upwd">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="25" name="tid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="25" name="tname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="53" parent="25" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tid</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
